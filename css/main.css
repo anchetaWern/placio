@@ -1,0 +1,63 @@
+body{
+	padding-top: 1px;
+}
+
+#form_container{
+	background-color:#DDD;
+	padding:30px;
+	width:300px;
+	margin:0 auto;
+	border: 1px solid darkgrey;
+}
+
+.span10{
+	text-align: center;
+}
+
+#container{
+	background-color: whitesmoke;
+	width: 1366px;
+	height: 651px;
+}
+
+#app_name{
+	width: 200px;
+	margin-left: 462px;
+	margin-bottom: 50px;
+	display: inline;
+}
+
+#logout_link{
+	float:right;
+	margin-right:20px;
+}
+
+h1{
+	display:inline;
+}
+
+#app_icon{
+	display:inline;
+}
+
+#places_container{
+	width: 1340px;
+	height: 502px;
+	border: 1px solid black;
+}
+
+#map_container{
+	width: 1067px;
+	height: 100%;
+	border: 1px solid black;
+	float: left;
+}
+
+#sides_container{
+	width: 254px;
+	height: 97%;
+	border: 1px solid black;
+	float: left;
+	padding: 7px;
+}
+
