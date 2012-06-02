@@ -13,5 +13,8 @@
 		<script src="/placio/libs/bootstrap/assets/js/bootstrap-carousel.js"></script>
 		<script src="/placio/libs/bootstrap/assets/js/bootstrap-typeahead.js"></script>
 		<script src="/placio/libs/bootstrap/assets/js/application.js"></script>
+		
+		<script src="/placio/js/jquery.filedrop.js"></script>
+		<script src="/placio/js/script.js"></script>
 	</body>
 </html>

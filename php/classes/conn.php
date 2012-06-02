@@ -7,6 +7,7 @@ class conn{
 	
 	function modify($query_string){//inserting, updating
 		$this->db->query($query_string);
+		return $this->db->insert_id;
 	}
 	
 	function select_row($query_string){//selecting single row

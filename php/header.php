@@ -6,7 +6,10 @@
 	<link href="/placio/libs/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="/placio/libs/bootstrap/assets/css/docs.css" rel="stylesheet">
 	<link href="/placio/css/main.css" rel="stylesheet"/>
-	<link rel="placio icon" href="/img/placio.ico">
+	<link rel="placio icon" href="/placio/img/placio.ico">
+	
+	<script src="/placio/js/jquery171.js"></script>
+	
 </head>
 <body>
 <div id="container">

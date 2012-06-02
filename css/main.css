@@ -14,6 +14,15 @@ body{
 	text-align: center;
 }
 
+.headings{
+	background-color: ivory;
+	padding:15px;
+}
+
+.contents{
+	padding:15px;
+}
+
 #container{
 	background-color: whitesmoke;
 	width: 1366px;
@@ -41,23 +50,33 @@ h1{
 }
 
 #places_container{
-	width: 1340px;
-	height: 502px;
-	border: 1px solid black;
+	width: 100%;
+	height: 80%;
 }
 
-#map_container{
+#map_container{	
 	width: 1067px;
 	height: 100%;
-	border: 1px solid black;
 	float: left;
 }
 
 #sides_container{
-	width: 254px;
+		width: 254px;
 	height: 97%;
-	border: 1px solid black;
 	float: left;
-	padding: 7px;
+	
+	border: 1px solid darkgrey;
+	background-color: #DDD;
+	
 }
 
+#map_canvas{
+	width: 90%;
+	height: 97%;
+	margin-left:40px;
+	border: 1px solid darkgrey;
+}
+
+img{
+	max-width:none;
+}
