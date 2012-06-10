@@ -8,7 +8,12 @@
 	<link href="/placio/css/main.css" rel="stylesheet"/>
 	<link rel="placio icon" href="/placio/img/placio.ico">
 	
-	<script src="/placio/js/jquery171.js"></script>
+	<link rel="stylesheet" href="/placio/css/bootstrap-image-gallery.min.css">
+	<!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+	<link rel="stylesheet" href="/placio/css/jquery.fileupload-ui.css">
+	
+	<script src="/placio/js/jquery.min.js"></script>
+	
 	
 </head>
 <body>

@@ -1,5 +1,6 @@
 body{
 	padding-top: 1px;
+	background-color: whiteSmoke;
 }
 
 #form_container{
@@ -21,12 +22,15 @@ body{
 
 .contents{
 	padding:15px;
+	background-color: #DDD;
+	
 }
 
 #container{
 	background-color: whitesmoke;
-	width: 1366px;
+	width: 1348px;
 	height: 651px;
+	
 }
 
 #app_name{
@@ -60,14 +64,18 @@ h1{
 	float: left;
 }
 
+#uploads_container{
+	width: 53%;
+	margin: 0 auto;
+	border: 1px solid darkgrey;
+}
+
 #sides_container{
-		width: 254px;
+	width: 254px;
 	height: 97%;
 	float: left;
-	
 	border: 1px solid darkgrey;
 	background-color: #DDD;
-	
 }
 
 #map_canvas{
@@ -79,4 +87,86 @@ h1{
 
 img{
 	max-width:none;
+}
+
+.dotted {
+    border: 10px dashed #ccc; width: 300px; min-height: 300px; margin: 20px auto;
+}
+
+
+
+/*uploader*/
+
+#dropbox .preview{
+	width: 187px;
+	height: 12px;
+	margin: 0 auto;
+	padding-top: 52px;
+}
+
+#dropbox .preview img{
+	max-width: 240px;
+	max-height:180px;
+	border:3px solid #fff;
+	display: block;
+	
+	box-shadow:0 0 2px #000;
+}
+
+#dropbox .imageHolder{
+	display: inline-block;
+	position:relative;
+}
+
+#dropbox .uploaded{
+	position: absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background: url('../img/done.png') no-repeat center center rgba(255,255,255,0.5);
+	display: none;
+}
+
+#dropbox .preview.done .uploaded{
+	display: block;
+}
+
+
+
+/*-------------------------
+	Progress Bars
+--------------------------*/
+
+
+
+#dropbox .progressHolder{
+	background-color: #252F38;
+	height: 12px;
+	width: 186px;
+	left: 0;
+	bottom: 0;
+	box-shadow: 0 0 2px black;
+	margin-right: 74px;
+}
+
+#dropbox .progress{
+	background-color:#2586d0;
+	position: absolute;
+	height:100%;
+	left:0;
+	width:0;
+	box-shadow: 0 0 1px rgba(255, 255, 255, 0.4) inset;
+	-moz-transition:0.25s;
+	-webkit-transition:0.25s;
+	-o-transition:0.25s;
+	transition:0.25s;
+}
+
+#dropbox .preview.done .progress{
+	width:100% !important;
+}
+
+#dropbox .done{
+	display:none;
 }

@@ -13,5 +13,11 @@ class utility{
 		}
 		return $has;
 	}
+	
+	function split_str($str, $delimiter){
+		$start_position = strpos($str, $delimiter) + 1;
+		$last_position = strlen($str);
+		return substr($str, $start_position, $last_position);
+	}
 }
 ?>
