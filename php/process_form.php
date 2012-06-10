@@ -19,6 +19,8 @@ if($utility->has_empty($_POST) == false){
 	
 		$place_id = $db->modify("INSERT INTO tbl_places SET place='$place', description='$description', lat='$latitude', lng='$longitude'");
 		$db->modify("INSERT INTO tbl_userplaces SET place_id='$place_id', user_id='$user_id'");
+		mkdir($_SERVER['DOCUMENT_ROOT'].'/placio/uploads/files/'.$place_id);
+		mkdir($_SERVER['DOCUMENT_ROOT'].'/placio/uploads/thumbnails/'.$place_id);
 		echo $place_id;
 	}else{
 	

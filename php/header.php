@@ -26,7 +26,6 @@ require_once('php/classes/storage.php');
 $db = new conn("localhost", "root", "1234", "placio"); 
 $utility = new utility();
 $storage = new storage();
-
 ?>
 	<div id="app_name">
 		

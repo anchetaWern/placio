@@ -12,7 +12,7 @@
 
 //error_reporting(E_ALL | E_STRICT);
 
-require('upload.class.php');
+require('classes/upload.php');
 
 $upload_handler = new UploadHandler();
 

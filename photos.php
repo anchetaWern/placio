@@ -89,7 +89,7 @@ require_once('/php/user_header.php');
                 <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="bar" style="width:0%;"></div></div>
             </td>
             <td class="start">{% if (!o.options.autoUpload) { %}
-                <button class="btn btn-primary">
+                <button class="btn btn-primary individual_upload" style="display:none">
                     <i class="icon-upload icon-white"></i>
                     <span>{%=locale.fileupload.start%}</span>
                 </button>
@@ -135,6 +135,9 @@ require_once('/php/user_header.php');
     </tr>
 {% } %}
 </script>
+
+
+
 <?php
 require_once('/php/footer.php');
 ?>

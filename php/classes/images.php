@@ -20,5 +20,11 @@ class images{
 		$image_info = $db->select_row("SELECT MAX(photo_id) AS id FROM tbl_photos");
 		return $image_info->id;
 	}
+	
+	function rename_image($img_name, $img_path){
+		$datetime = date('Y-m-d g:i:s');
+		$new_img_name = $datetime. $img_name;
+		rename($img_path.$img_name, $img_path.$new_img_name);
+	}
 }
 ?>

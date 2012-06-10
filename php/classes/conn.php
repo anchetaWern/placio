@@ -16,6 +16,11 @@ class conn{
 		return $row;
 	}
 	
+	function numrows($query_string){
+		$select_query = $this->db->query($query_string);
+		return $select_query->num_rows;
+	}
+	
 	function select_list($query_string){//selecting a group of rows
 		$list = array();
 		$select_query = $this->db->query($query_string);
