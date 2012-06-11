@@ -32,6 +32,6 @@ $storage = new storage();
 			<img src="/placio/img/placio.png" id="app_icon"/>
 		
 		
-			<h1>Placio</h1>
+			<h1><a href="homy.php" style="text-decoration:none;">Placio</a></h1>
 		
 	</div>
