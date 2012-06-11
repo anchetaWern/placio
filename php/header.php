@@ -1,10 +1,12 @@
-<!doctype html>
-<head>
-	<title>Placio</title>
-	<meta charset="utf-8"/>
-	<link href="/placio/libs/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
-	<link href="/placio/libs/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="/placio/libs/bootstrap/assets/css/docs.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Placio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link href="/placio/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
 	<link href="/placio/css/main.css" rel="stylesheet"/>
 	<link rel="placio icon" href="/placio/img/placio.ico">
 	
