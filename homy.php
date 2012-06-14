@@ -196,8 +196,8 @@ require_once('/php/user_header.php');
 			e.preventDefault();
 			var place		= $.trim($('#n_place').val());
 			var description	= $.trim($('#n_description').val());
-			var lat = homeMarker.getPosition().$a;
-			var lng = homeMarker.getPosition().ab;
+			var lat = homeMarker.getPosition().lat();
+			var lng = homeMarker.getPosition().lng();
 			
 			$.post('php/process_form.php', {'place' : place, 'description' : description, 'lat' : lat, 'lng' : lng}, 
 				function(data){
