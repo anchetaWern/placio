@@ -31,5 +31,18 @@ class utility{
 		
 		return $new_filename;
 	}
+	
+	function get_id(){
+		$current_url = $_SERVER["REQUEST_URI"];
+		$url_len = strlen($current_url);
+		$last_str = $current_url[$url_len - 1];
+		
+		if($last_str == '/'){
+			$current_url = substr($current_url, 0, $url_len - 1);
+		}
+		$explode = explode("/", $current_url);
+		
+		return $explode[sizeof($explode) - 1];
+	}
 }
 ?>

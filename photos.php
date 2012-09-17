@@ -1,13 +1,24 @@
 <?php
 require_once('/php/header.php'); 
 require_once('/php/user_header.php');
+
+$user_id 	= $storage->fetch('user_id');
+$place_id 	= $utility->get_id();
+
+$storage->store('current_place_id', $place_id);
+
+$verify		= $db->numrows("SELECT place FROM tbl_places LEFT JOIN tbl_userplaces 
+				ON tbl_places.place_id = tbl_userplaces.place_id WHERE user_id = '$user_id' AND tbl_userplaces.place_id = '$place_id'"); //verify if the current user has access to the photos
+
+if($verify > 0){			
+$select_place 		= $db->select_row("SELECT place FROM tbl_places WHERE place_id = '$place_id'");
 ?>
 <div id="uploads_container">
 	<div class="headings">
-		<h4>Photos for <?php echo $storage->fetch('current_place'); ?></h4>
+		<h4>Photos from <?php echo $select_place->place; ?></h4>
 	</div>
 	<div class="contents">
-		<form id="fileupload" action="php/" method="POST" enctype="multipart/form-data">
+		<form id="fileupload" action="/placio/php/" method="POST" enctype="multipart/form-data">
 			<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
 			<div class="row fileupload-buttonbar">
 				<div class="span7">
@@ -139,5 +150,6 @@ require_once('/php/user_header.php');
 
 
 <?php
+}
 require_once('/php/footer.php');
 ?>

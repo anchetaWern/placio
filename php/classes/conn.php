@@ -1,8 +1,8 @@
 <?php
 class conn{
 	private $db;
-	function __construct($host, $user, $password, $database){
-		$this->db = new Mysqli($host, $user, $password, $database);
+	function __construct(){
+		$this->db = new Mysqli("localhost", "root", "1234", "placio");
 	}
 	
 	function modify($query_string){//inserting, updating

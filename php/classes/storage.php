@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 class storage{
 	function store($key, $value){
 		$_SESSION[$key] = $value;

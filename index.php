@@ -18,6 +18,7 @@ if(!empty($_POST)){
 		$email		= $utility->clean($_POST['email']);
 		$password	= md5($utility->clean($_POST['password']));
 		
+		
 		$user_details = $db->select_row("SELECT email, user_id FROM tbl_users WHERE email='$email' AND hashed_password='$password'");
 		if(!empty($user_details)){//user exists
 			$storage->store('email', $email);//create session for user

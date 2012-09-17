@@ -25,7 +25,7 @@ require_once('php/classes/conn.php');
 require_once('php/classes/utility.php');
 require_once('php/classes/storage.php');
 
-$db = new conn("localhost", "root", "1234", "placio"); 
+$db = new conn(); 
 $utility = new utility();
 $storage = new storage();
 ?>
@@ -34,6 +34,6 @@ $storage = new storage();
 			<img src="/placio/img/placio.png" id="app_icon"/>
 		
 		
-			<h1><a href="homy.php" style="text-decoration:none;">Placio</a></h1>
+			<h1><a href="/placio/homy.php" style="text-decoration:none;">Placio</a></h1>
 		
 	</div>

@@ -117,12 +117,13 @@ require_once('/php/user_header.php');
 			var exists = 0;
 			var lat = 0;
 			var lng = 0;
+			var place_id;
 			$('#saved_places option').each(function(index){
 				var cur_id = $(this).data('place');
 				
 				if(cur_id == val){
 					exists = 1;
-					$('#place_id').val($(this).data('id'));
+					place_id = $(this).data('id');
 					lat = $(this).data('lat');
 					lng = $(this).data('lng');
 					$('#e_place').val($(this).data('place'));
@@ -130,9 +131,9 @@ require_once('/php/user_header.php');
 				}
 			});
 			
-			$.post('php/set_place.php', {'place_id' : $('#place_id').val()}, function(data){
-				console.log(data);
-			});
+			$('#link_upload').attr("href", "/placio/photos.php/" + place_id);
+			
+			
 			
 			if(exists == 0){
 				$('input[type=text], input[type=hidden]').val('');
@@ -213,11 +214,11 @@ require_once('/php/user_header.php');
 		
 		$('#update_form').submit(function(e){
 			e.preventDefault();
-			var place_id 	= $.trim();
+			var place_id 	= $.trim($('#place_id').val());
 			var place		= $.trim($('#e_place').val());
 			var description	= $.trim($('#e_description').val());
-			var lat = homeMarker.getPosition().$a;
-			var lng = homeMarker.getPosition().ab;
+			var lat = homeMarker.getPosition().lat();
+			var lng = homeMarker.getPosition().lng();
 			
 			$.post('php/process_form.php', {'place_id' : place_id, 'place' : place, 'description' : description, 'lat' : lat, 'lng' : lng});
 			$('input[type=text], input[type=hidden]').val('');

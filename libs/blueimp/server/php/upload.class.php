@@ -1,6 +1,6 @@
 <?php
 /*
- * jQuery File Upload Plugin PHP Class 5.11.1
+ * jQuery File Upload Plugin PHP Class 5.11.2
  * https://github.com/blueimp/jQuery-File-Upload
  *
  * Copyright 2010, Sebastian Tschan
@@ -9,30 +9,25 @@
  * Licensed under the MIT license:
  * http://www.opensource.org/licenses/MIT
  */
-require_once('storage.php');
 
 class UploadHandler
 {
     protected $options;
 
     function __construct($options=null) {
-		$storage = new storage();
-		$place_id = $storage->fetch('current_place_id');
-		
         $this->options = array(
             'script_url' => $this->getFullUrl().'/',
-            'upload_dir' => $_SERVER['DOCUMENT_ROOT'].'/placio/uploads/files/'.$place_id.'/',
-            'upload_url' => 'http://127.0.0.1:8020/placio/uploads/files/'.$place_id.'/',
+            'upload_dir' => dirname($_SERVER['SCRIPT_FILENAME']).'/files/',
+            'upload_url' => $this->getFullUrl().'/files/',
             'param_name' => 'files',
             // Set the following option to 'POST', if your server does not support
             // DELETE requests. This is a parameter sent to the client:
             'delete_type' => 'DELETE',
             // The php.ini settings upload_max_filesize and post_max_size
-            // take precedence over the following max_file_size setting: 2Mb
-            'max_file_size' => 2000000,
+            // take precedence over the following max_file_size setting:
+            'max_file_size' => null,
             'min_file_size' => 1,
-			//only allow images
-            'accept_file_types' => '/\.(gif|jpe?g|png)$/i',
+            'accept_file_types' => '/.+$/i',
             // The maximum number of files for the upload directory:
             'max_number_of_files' => null,
             // Image resolution restrictions:
@@ -58,8 +53,8 @@ class UploadHandler
                 ),
                 */
                 'thumbnail' => array(
-                    'upload_dir' => $_SERVER['DOCUMENT_ROOT'].'/placio/uploads/thumbnails/'.$place_id.'/',
-                    'upload_url' => 'http://127.0.0.1:8020/placio/uploads/thumbnails/'.$place_id.'/',
+                    'upload_dir' => dirname($_SERVER['SCRIPT_FILENAME']).'/thumbnails/',
+                    'upload_url' => $this->getFullUrl().'/thumbnails/',
                     'max_width' => 80,
                     'max_height' => 80
                 )
@@ -272,7 +267,7 @@ class UploadHandler
             return false;
         }
       	$orientation = intval(@$exif['Orientation']);
-      	if (!in_array($orientation, array(3, 6, 8))) { 
+      	if (!in_array($orientation, array(3, 6, 8))) {
       	    return false;
       	}
       	$image = @imagecreatefromjpeg($file_path);
@@ -295,8 +290,7 @@ class UploadHandler
       	return $success;
     }
 
-    protected function handle_file_upload($uploaded_file, $name, $size, $type, $error, $index) {
-		
+    protected function handle_file_upload($uploaded_file, $name, $size, $type, $error, $index = null) {
         $file = new stdClass();
         $file->name = $this->trim_file_name($name, $type, $index);
         $file->size = intval($size);
@@ -316,9 +310,7 @@ class UploadHandler
                         FILE_APPEND
                     );
                 } else {
-		
                     move_uploaded_file($uploaded_file, $file_path);
-				
                 }
             } else {
                 // Non-multipart uploads (PUT method support)
@@ -368,7 +360,6 @@ class UploadHandler
     }
 
     public function post() {
-		
         if (isset($_REQUEST['_method']) && $_REQUEST['_method'] === 'DELETE') {
             return $this->delete();
         }
@@ -379,7 +370,6 @@ class UploadHandler
             // param_name is an array identifier like "files[]",
             // $_FILES is a multi-dimensional array:
             foreach ($upload['tmp_name'] as $index => $value) {
-				
                 $info[] = $this->handle_file_upload(
                     $upload['tmp_name'][$index],
                     isset($_SERVER['HTTP_X_FILE_NAME']) ?
