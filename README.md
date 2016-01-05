@@ -9,6 +9,12 @@ A simple app that allows users to save places on Google Maps and upload photos t
 - [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
 - [Google Maps API](https://developers.google.com/maps/)
 
+
+##Project Status
+
+Abandonware. I no longer have any plans on improving and maintaining this project.
+
+
 ##License
 
 The MIT License (MIT)
